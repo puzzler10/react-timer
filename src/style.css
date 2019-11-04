@@ -1,0 +1,203 @@
+
+@font-face {
+    font-family: 'Cooper Hewitt';
+    src: url('fonts/CooperHewitt-Medium.eot');
+    src: url('fonts/CooperHewitt-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/CooperHewitt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cooper Hewitt';
+    src: url('fonts/CooperHewitt-Bold.eot');
+    src: url('fonts/CooperHewitt-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/CooperHewitt-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+ /* ///////////////// GLOBALS ///////////////// */
+:root {
+    --app-width: 500px; 
+    --app-height: 400px; 
+    /* https://coolors.co/011638-364156-cdcdcd-dff8eb-214e34 */
+    --color-darkblue: #011638; 
+    --color-charcoal: #364156;
+    --color-gray: #CDCDCD;
+    --color-cyan: #DFF8EB; 
+    --color-green: #214E34;
+
+}
+* {
+    box-sizing: border-box; 
+    font-family: 'Cooper Hewitt', 'sans-serif';
+    background: var(--color-gray); 
+    color: var(--color-darkblue); 
+}
+#root {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    margin-top: 40px; 
+}   
+
+
+/* Overall app  */
+#timer-app { 
+    display: flex; 
+    flex-direction:column; 
+    align-items: center; 
+    justify-content: space-around;
+    width: var(--app-width); 
+    height: var(--app-height); 
+    border: 4px solid var(--color-darkblue);  
+}
+hr {
+    clear:both;
+    display:block;
+    width: 90%;               
+    height: 1px;
+    border: 3px solid var(--color-darkblue); 
+  }
+
+h1,h2,h3,h4,h5,h6,p{
+    display: inline; 
+    margin: 0;  
+}
+fieldset{
+    margin: 0; 
+    padding-bottom: 0; 
+}
+/* ///////////////// Screen bit  ///////////////// */
+.sep {
+    padding-right:10px; 
+    font-size: 20px; 
+}
+#screen{
+    font-size: 80px; 
+    height: 80px; 
+    margin-top: 40px;  
+    line-height: 80px;
+    padding-top: 6px; 
+    margin-left: 28 px;
+}
+
+/* //////////////////// Control buttons //////////////// */
+button {
+    padding-top: 10px; 
+    border-radius: 5px; 
+}
+
+#control-buttons {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around; 
+}
+
+#control-buttons button {
+    font-size: 35px;  
+    width: 120px; 
+    margin: 10px; 
+}
+button#startstop{
+    background: var(--color-green); 
+    color: var(--color-gray); 
+}
+button#reset{
+    background: var(--color-charcoal); 
+    color: var(--color-gray); 
+}
+
+#startstop{
+    margin-right: 40px; 
+}
+
+/* //////////// Manual time ////////////////// */
+#timecontrol {
+    display:flex; 
+    flex-direction: row; 
+    justify-content: space-around; 
+    align-items: center;    
+    width: calc(var(--app-width) - 10%) ;
+    margin-bottom: 10px;
+}
+#timecontrol-flex-wrapper{
+    /* There is a bug where flex doesn't work in fieldset.
+    This is a workaround. */
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+fieldset#manualtime{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-around; 
+    height: 100%; 
+    align-items: right; 
+    padding: 5 10 5 10; 
+    /* margin: 10 0 10 0;   */
+    border: dotted; 
+}
+#manualtime-inputs input{
+    font-size: 30px; 
+}
+#manualtime button{
+    padding-top: 7px; 
+    margin-top: 10px; 
+    font-size: 16px; 
+    background: var(--color-charcoal); 
+    color: var(--color-gray); 
+    width: 70px;  
+    align-self: flex-end; 
+}
+
+#manualtime h4{
+    margin-top: 10px; 
+}
+
+#quickdiv {
+    height: 100%; 
+}
+
+.inputsep{
+    margin-right: 10px; 
+    margin-left: 2px; 
+}
+
+ /* Inputs for timer */
+/*  Removing spin wheels */
+input[type='number'] {
+    -moz-appearance:textfield; /* firefox */
+    /* background-color: var(--color-gray); */
+    border-color: var(--color-darkblue);
+    
+
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ///////////////// Quick choices  ///////////////// */
+#quickchoices-buttons{
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    width: 150px; 
+    height: 75px; 
+}
+#quickchoices-buttons button{
+    margin: 3px; 
+    border: 1px solid var(--color-darkblue); 
+    border-radius: 0px; 
+    font-size: 15px; 
+}
+
+
+
+
